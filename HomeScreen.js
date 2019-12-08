@@ -7,7 +7,7 @@ class LogoTitle extends React.Component {
     render() {
         return (
             <Image
-                source={{ uri: 'https://facebook.github.io/react/logo-og.png' }}
+                source={require('./CoffeetoGo.png')}
                 style={{ width: 30, height: 30 }}
             />
         );
@@ -18,25 +18,16 @@ class LogoTitle extends React.Component {
 class HomeScreen extends React.Component {
 
     static navigationOptions = {
-        // title: "Home",
-        headerStyle: {
-            backgroundColor: '#f4511e'
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-            fontWeight: 'bold'
-
-        },
-        HeaderTitle: () => <LogoTitle />
-
-    }
+        // headerTitle instead of title
+        headerTitle: () => <LogoTitle />
+    };
 
     render() {
         const { navigate } = this.props.navigation;
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Image
-                    source={{ uri: 'https://facebook.github.io/react/logo-og.png' }}
+                    source={require('./CoffeetoGo.png')}
                     style={{ width: 30, height: 30 }}
                 />
                 <Text>Home Screen</Text>
